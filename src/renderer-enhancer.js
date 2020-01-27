@@ -49,7 +49,7 @@ module.exports = overrides => storeCreator => (reducer, providedInitialState) =>
 
   // Forward update to the main process so that it can forward the update to all other renderers
   const forwarder = (action) =>
-      ipcRenderer.send(`${globalName}-renderer-dispatch`, clientId, JSON.stringify(action));
+    ipcRenderer.send(`${globalName}-renderer-dispatch`, clientId, JSON.stringify(action));
 
   const context = {
     params,
